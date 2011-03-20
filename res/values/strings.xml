@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">CourseFocus</string>
+	
+	<!-- strings used in login activity -->
+    <string name="email">Email(gmail):</string>
+    <string name="code">Code(gmail code):</string>
+    <string name="rememberInfo">memorize information</string>
+    <string name="classNum">Class Number:</string>
+    <string name="login">login</string>
+    
+    <!-- strings used in local reminding system -->
+    <string name="setLocalReminding">Set Local Reminding</string>
+    <string name="localRemindingOn">turn on</string>
+    <string name="localRemindingOff">turn on</string>
+    <string name="localRemindingSave">Save settings</string>
+</resources>
