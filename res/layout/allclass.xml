@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView
+    android:text=" Mon     Tues    Wen     Thur     Fir      Sat      Sun"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    ></TextView>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >	<Button android:text="101" android:id="@+id/button101" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="201" android:id="@+id/button201" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="301" android:id="@+id/button301" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="401" android:id="@+id/button401" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="501" android:id="@+id/button501" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="601" android:id="@+id/button601" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="701" android:id="@+id/button701" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+	</LinearLayout>
+	  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+		<Button android:text="102" android:id="@+id/button102" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="202" android:id="@+id/button202" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="302" android:id="@+id/button302" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="402" android:id="@+id/button402" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="502" android:id="@+id/button502" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="602" android:id="@+id/button602" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="702" android:id="@+id/button702" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+	</LinearLayout>
+	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+		<Button android:text="103" android:id="@+id/button103" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="203" android:id="@+id/button203" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="303" android:id="@+id/button303" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="403" android:id="@+id/button403" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="503" android:id="@+id/button503" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="603" android:id="@+id/button603" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="703" android:id="@+id/button703" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+	</LinearLayout>
+	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+		<Button android:text="104" android:id="@+id/button104" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="204" android:id="@+id/button204" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="304" android:id="@+id/button304" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="404" android:id="@+id/button404" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="504" android:id="@+id/button504" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="604" android:id="@+id/button604" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="704" android:id="@+id/button704" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+	</LinearLayout>
+	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+		<Button android:text="105" android:id="@+id/button105" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="205" android:id="@+id/button205" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="305" android:id="@+id/button305" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="405" android:id="@+id/button405" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="505" android:id="@+id/button505" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="605" android:id="@+id/button605" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="705" android:id="@+id/button705" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+	</LinearLayout>
+	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+		<Button android:text="106" android:id="@+id/button106" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="206" android:id="@+id/button206" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="306" android:id="@+id/button306" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="406" android:id="@+id/button406" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="506" android:id="@+id/button506" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="606" android:id="@+id/button606" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="706" android:id="@+id/button706" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+		<Button android:text="107" android:id="@+id/button107" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="207" android:id="@+id/button207" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="307" android:id="@+id/button307" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="407" android:id="@+id/button407" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="507" android:id="@+id/button507" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="607" android:id="@+id/button607" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="707" android:id="@+id/button707" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+		<Button android:text="108" android:id="@+id/button108" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="208" android:id="@+id/button208" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="308" android:id="@+id/button308" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="408" android:id="@+id/button408" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="508" android:id="@+id/button508" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="608" android:id="@+id/button608" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="708" android:id="@+id/button708" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+		<Button android:text="109" android:id="@+id/button109" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="209" android:id="@+id/button209" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="309" android:id="@+id/button309" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="409" android:id="@+id/button409" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="509" android:id="@+id/button509" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="609" android:id="@+id/button609" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="709" android:id="@+id/button709" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+		<Button android:text="110" android:id="@+id/button110" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="210" android:id="@+id/button210" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="310" android:id="@+id/button310" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="410" android:id="@+id/button410" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="510" android:id="@+id/button510" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="610" android:id="@+id/button610" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="710" android:id="@+id/button710" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+		<Button android:text="111" android:id="@+id/button111" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="211" android:id="@+id/button211" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="311" android:id="@+id/button311" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="411" android:id="@+id/button411" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="511" android:id="@+id/button511" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="611" android:id="@+id/button611" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+		<Button android:text="711" android:id="@+id/button711" android:layout_width="45px" android:layout_height="30px" android:textSize="10px"></Button>
+	</LinearLayout>
+</LinearLayout>
