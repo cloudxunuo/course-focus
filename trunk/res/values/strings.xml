@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">CourseFocus</string>
-	
 	<!-- strings used in login activity -->
     <string name="email">Email(gmail):</string>
     <string name="code">Code(gmail code):</string>
@@ -12,6 +11,19 @@
     <!-- strings used in local reminding system -->
     <string name="setLocalReminding">Set Local Reminding</string>
     <string name="localRemindingOn">turn on</string>
-    <string name="localRemindingOff">turn on</string>
+    <string name="localRemindingOff">turn off</string>
     <string name="localRemindingSave">Save settings</string>
+    
+	<!--strings used in every course-->
+	<string name="CourseName">课名</string>
+	<string name="TeacherName">授课教师</string>
+	<string name="CourseTime">上课时间</string>
+	<string name="CourseAddress">授课地点</string>
+	<string name="OK">确定</string>
+	<string name="Cancle">取消</string>
+	<string name="CourseMessage">课程信息</string>
+	<string name="editCourse">Edit Course</string>
+	
+	<!-- strings used in all course-->
+	<string name="allCourse">All Course</string>
 </resources>
