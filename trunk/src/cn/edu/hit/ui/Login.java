@@ -1,4 +1,4 @@
-package cn.edu.hit;
+package cn.edu.hit.ui;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
@@ -17,6 +17,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
+import cn.edu.hit.R;
 import cn.edu.hit.db.DBHelper;
 
 import android.app.Activity;

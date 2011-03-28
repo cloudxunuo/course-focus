@@ -1,5 +1,6 @@
-package cn.edu.hit;
+package cn.edu.hit.ui;
 
+import cn.edu.hit.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
