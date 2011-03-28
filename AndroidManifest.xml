@@ -22,7 +22,7 @@
        		android:label="@string/editCourse">
             </activity>
 		
-		<activity android:name=".SetLocalReminding"
+		<activity android:name="ui.SetLocalReminding"
 		android:label="@string/setLocalReminding">
 		</activity>
     </application>

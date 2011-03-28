@@ -1,6 +1,8 @@
-package cn.edu.hit;
+package cn.edu.hit.ui;
 
 import java.util.ArrayList;
+
+import cn.edu.hit.R;
 
 import android.app.Activity;
 import android.os.Bundle;
