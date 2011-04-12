@@ -1,4 +1,4 @@
-package cn.edu.hit.ui;
+package org.mstc.coursefocus.ui;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
@@ -14,23 +14,27 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
-
-import cn.edu.hit.R;
-import cn.edu.hit.db.DBHelper;
+import org.mstc.coursefocus.db.DBHelper;
 
 import android.app.Activity;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Login extends Activity {
+	private Toast toast = null;
 	
 	private Button login = null;
 	
@@ -77,6 +81,15 @@ public class Login extends Activity {
 		if (classNum != "" && !tableExists)
 		{
 			httpRequest = new HttpPost(httpUri);
+			
+			HttpParams httpParams = new BasicHttpParams();
+			int timeoutConnection = 3000; 
+			HttpConnectionParams.setConnectionTimeout(httpParams, timeoutConnection); 
+			//Set the default socket timeout (SO_TIMEOUT)  
+			// in milliseconds which is the timeout for waiting for data. 
+			int timeoutSocket = 5000; 
+			HttpConnectionParams.setSoTimeout(httpParams, timeoutSocket);
+			
 			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
 			params.add(new BasicNameValuePair("classNum", classNum.toString()));
 			try
@@ -87,7 +100,7 @@ public class Login extends Activity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			DefaultHttpClient httpClient = new DefaultHttpClient();
+			DefaultHttpClient httpClient = new DefaultHttpClient(httpParams);
 			try {
 				httpResponse = httpClient.execute(httpRequest);
 			} 
@@ -97,6 +110,13 @@ public class Login extends Activity {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}
+			if (httpResponse == null)
+			{
+				toast = Toast.makeText(getApplicationContext(),"网络无响应！数据无法获取", Toast.LENGTH_LONG);
+			    toast.setGravity(Gravity.CENTER, 0, 0);
+			    toast.show();
+				return;
 			}
 			if (httpResponse.getStatusLine().getStatusCode() == 200)
 			{
@@ -156,12 +176,16 @@ public class Login extends Activity {
 				}
 				else
 				{
-					System.out.println("there is no information about your class in our database");
+					toast = Toast.makeText(getApplicationContext(),"对不起！在我们的数据库里没有你的班级信息", Toast.LENGTH_LONG);
+				    toast.setGravity(Gravity.CENTER, 0, 0);
+				    toast.show();
 				}
 			}
 			else 
 			{
-				System.out.println("something error in your web service");
+				toast = Toast.makeText(getApplicationContext(),"对不起！我们的服务器出了问题...", Toast.LENGTH_LONG);
+			    toast.setGravity(Gravity.CENTER, 0, 0);
+			    toast.show();
 			}
 		}
 		else

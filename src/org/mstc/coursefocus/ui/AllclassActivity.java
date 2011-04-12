@@ -1,9 +1,6 @@
-package cn.edu.hit.ui;
+package org.mstc.coursefocus.ui;
 
 import java.util.ArrayList;
-
-import cn.edu.hit.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
