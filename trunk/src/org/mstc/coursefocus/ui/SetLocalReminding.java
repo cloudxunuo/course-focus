@@ -1,6 +1,5 @@
-package cn.edu.hit.ui;
+package org.mstc.coursefocus.ui;
 
-import cn.edu.hit.R;
 import android.app.Activity;
 import android.os.Bundle;
 

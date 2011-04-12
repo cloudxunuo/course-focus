@@ -1,4 +1,4 @@
-package cn.edu.hit.db;
+package org.mstc.coursefocus.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
