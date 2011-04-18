@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="org.mstc.coursefocus.ui"
+      package="org.mstc.coursefocus"
       android:versionCode="1"
       android:versionName="1.0">
     <uses-sdk android:minSdkVersion="7" />
@@ -9,21 +9,29 @@
         <activity android:name=".Login"
                   android:label="@string/app_name">
                   <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                  <category android:name="android.intent.category.LAUNCHER" />
+       			<action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         
-        <activity android:name=".AllclassActivity"
+        <activity android:name=".CoursesOfADay"
         			android:label="@string/allCourse">
 		</activity>
         		
-       	<activity android:name=".MainActivity"
+       	<activity android:name=".EditCourse"
        		android:label="@string/editCourse">
             </activity>
 		
-		<activity android:name="ui.SetLocalReminding"
+		<activity android:name=".SetLocalReminding"
 		android:label="@string/setLocalReminding">
+		</activity>
+		
+		<activity android:name=".CourseDetails"
+		android:label="@string/courseDetails">
+		</activity>
+		
+		<activity android:name=".CourseOperation"
+		android:label="@string/courseOperation">
 		</activity>
     </application>
 </manifest>

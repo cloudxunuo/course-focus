@@ -1,29 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">CourseFocus</string>
+	
 	<!-- strings used in login activity -->
-    <string name="email">Email(gmail):</string>
-    <string name="code">Code(gmail code):</string>
-    <string name="rememberInfo">memorize information</string>
-    <string name="classNum">Class Number:</string>
-    <string name="login">login</string>
+    <string name="email">Email(gmail)</string>
+    <string name="code">gamil密码</string>
+    <string name="rememberInfo">记住我的信息</string>
+    <string name="classNum">班号</string>
+    <string name="login">登录</string>
     
     <!-- strings used in local reminding system -->
-    <string name="setLocalReminding">Set Local Reminding</string>
-    <string name="localRemindingOn">turn on</string>
-    <string name="localRemindingOff">turn off</string>
-    <string name="localRemindingSave">Save settings</string>
+    <string name="setLocalReminding">设置本地提醒</string>
+    <string name="localRemindingOn">开启闹钟</string>
+    <string name="localRemindingOff">关闭闹钟</string>
+    <string name="localRemindingSave">保存设置</string>
     
 	<!--strings used in every course-->
-	<string name="CourseName">课名</string>
-	<string name="TeacherName">授课教师</string>
-	<string name="CourseTime">上课时间</string>
-	<string name="CourseAddress">授课地点</string>
-	<string name="OK">确定</string>
-	<string name="Cancle">取消</string>
-	<string name="CourseMessage">课程信息</string>
-	<string name="editCourse">Edit Course</string>
+    <string name="CourseName">课名</string>
+    <string name="TeacherName">授课教师</string>
+    <string name="CourseTime">上课时间</string>
+    <string name="CourseAddress">授课地点</string>
+    <string name="OK">确定</string>
+    <string name="Cancle">取消</string>
+    <string name="CourseMessage">课程信息</string>
+    <string name="CourseWeeks">课程安排</string>
+    <string name="week">周</string>
+    <string name="CourseDate">课程日期</string>
+    <string name="Mon">星期一</string>
+    <string name="Tue">星期二</string>
+    <string name="Wed">星期三</string>
+    <string name="Thur">星期四</string>
+    <string name="Fri">星期五</string>
+    <string name="Sat">星期六</string>
+    <string name="Sun">星期日</string>
+    <string name="No_1">01</string>
+    <string name="No_2">02</string>
+    <string name="No_3">03</string>
+    <string name="No_4">04</string>
+    <string name="No_5">05</string>
+    <string name="No_6">06</string>
+    <string name="No_7">07</string>
+    <string name="No_8">08</string>
+    <string name="No_9">09</string>
+    <string name="No_10">10</string>
+    <string name="No_11">11</string>
+    <string name="No_12">12</string>
+    <string name="No_13">13</string>
+    <string name="No_14">14</string>
+    <string name="No_15">15</string>
+    <string name="No_16">16</string>
+    <string name="No_17">17</string>
+    <string name="No_18">18</string>
+    <string name="No_19">19</string>
+    <string name="No_20">20</string>
+    <string name="No_21">21</string>
+    <string name="CourseT_1">8:00-9:45</string>
+    <string name="CourseT_2">10:00-11:45</string>
+    <string name="CourseT_3">13:45-15:30</string>
+    <string name="CourseT_4">15:45-17:30</string>
+    <string name="CourseT_5">18:30-20:15</string>
+    <string name="CourseT_6">18:30-21:20</string>
+    <string name="editCourse">编辑课程信息</string>
 	
 	<!-- strings used in all course-->
-	<string name="allCourse">All Course</string>
+	<string name="allCourse">今天的课程</string>
+	
+	<!-- strings used in course details -->
+	<string name="courseDetails">课程详细信息</string>
+	<string name="to">到</string>
+	<string name="comment">评论该课</string>
+	<string name="more">更多</string>
+	<string name="back">返回</string>
+	<string name="coursePlan">课程安排</string>
+	
+	<!-- strings used in course operation -->
+	<string name="courseOperation">更多</string>
+	<string name="setGCReminding">设置google calendar提醒</string>
+	<string name="findCourseWithSameName">查看本课全部时间安排</string>
+	<string name="editThis">编辑本节课</string>
+	<string name="deleteThis">删除本节课</string>
+	<string name="confirmMsg">你确定要删除本课？</string>
 </resources>
