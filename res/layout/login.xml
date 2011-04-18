@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:stretchColumns="2"
+    >
+<TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="1"
+    android:collapseColumns="2"
     >    
     <TableRow>
     	<TextView  
-		    android:layout_width="fill_parent" 
+		    android:layout_width="wrap_content" 
 		    android:layout_height="wrap_content" 
 		    android:text="@string/email"/>
-		<EditText
-			android:id="@+id/email"
-			android:layout_width="10dp"
-			android:layout_height="wrap_content"/>
+    	<EditText 
+    		android:layout_width="wrap_content" 
+    		android:layout_height="wrap_content" 
+    		android:id="@+id/email"/>
     </TableRow>
     <TableRow>
     	<TextView  
-		    android:layout_width="fill_parent" 
+		    android:layout_width="wrap_content" 
 		    android:layout_height="wrap_content" 
 		    android:text="@string/code"/>
 		<EditText
 			android:id="@+id/code"
-			android:layout_width="fill_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"/>
     </TableRow>
     <TableRow>
     	<TextView  
-		    android:layout_width="fill_parent" 
+		    android:layout_width="wrap_content" 
 		    android:layout_height="wrap_content" 
 		    android:text="@string/classNum"/>
 		<EditText
 			android:id="@+id/classNum"
-			android:layout_width="fill_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"/>
     </TableRow>
     <TableRow>
@@ -46,3 +52,4 @@
 			android:text="@string/rememberInfo"/>
    	</TableRow>
 </TableLayout>
+</LinearLayout>
