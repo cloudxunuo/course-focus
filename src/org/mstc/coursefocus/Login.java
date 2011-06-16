@@ -23,7 +23,10 @@ import org.mstc.coursefocus.db.DBHelper;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -31,6 +34,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -38,6 +42,10 @@ public class Login extends Activity {
 	private Toast toast = null;
 	
 	private Button login = null;
+	private EditText classNum_et = null;
+	private EditText gmail_et = null;
+	private EditText password_et = null;
+	private CheckBox rememberInfo =  null;
 	
 	SQLiteDatabase db = null;
 	private HttpPost httpRequest = null;
@@ -55,6 +63,13 @@ public class Login extends Activity {
         
         setContentView(R.layout.login);
         login = (Button)findViewById(R.id.loginButton);
+        classNum_et = (EditText)findViewById(R.id.classNum);
+		gmail_et = (EditText)findViewById(R.id.email);
+		password_et = (EditText)findViewById(R.id.password);
+		rememberInfo = (CheckBox)findViewById(R.id.rememberInfo);
+		
+		loadSharedPreferences();
+		
         login.setOnClickListener(new OnClickListener(){
         	public void onClick(View view)
         	{
@@ -63,12 +78,44 @@ public class Login extends Activity {
         });
     }
     
+    private void loadSharedPreferences()
+    {
+    	SharedPreferences preference = getSharedPreferences("person",Context.MODE_PRIVATE);
+    	gmail_et.setText(preference.getString("gmail", ""));
+    	password_et.setText(preference.getString("password", ""));
+    	classNum_et.setText(preference.getString("classNum", ""));
+    	String rememberMe = preference.getString("rememberMe", "");
+    	if (rememberMe.equals("true"))
+    	{
+    		rememberInfo.setChecked(true);
+    		if (checkTableExist(classNum_et.getText().toString()))
+			{
+    			turnAllClass(classNum_et.getText().toString());
+			}
+    	}
+    	else
+    	{
+    		rememberInfo.setChecked(false);
+    	}
+    }
+    
     public void loginClick()
     {
     	CharSequence classNum = "";
-    	
-		EditText classNum_et = (EditText)findViewById(R.id.classNum);
+		
 		classNum = classNum_et.getText();
+		
+		String gmail = gmail_et.getText().toString();
+		String password = password_et.getText().toString();
+		
+		//判断是否输入gmail和gamil密码
+		if (gmail.equals("") || password.equals(""))
+		{
+			toast = Toast.makeText(getApplicationContext(),"请填写您的gmail及密码！", Toast.LENGTH_SHORT);
+		    toast.setGravity(Gravity.CENTER, 0, 0);
+		    toast.show();
+		    return;
+		}
 		
 		//判断是否输入班号
 		if (classNum.toString().equals(""))
@@ -78,6 +125,7 @@ public class Login extends Activity {
 		    toast.show();
 		    return;
 		}
+		
 		
 		//检查该班课表信息是否存在于本地数据库
 		if (!checkTableExist(classNum.toString()))
@@ -89,6 +137,30 @@ public class Login extends Activity {
 			//数据存在的话，直接跳转到课表显示界面
 			turnAllClass(classNum.toString());
 		}
+		
+		rememberInfoCheck();
+    }
+    
+    private void rememberInfoCheck()
+    {
+    	boolean isChecked = rememberInfo.isChecked();
+    	
+		SharedPreferences preference = getSharedPreferences("person",Context.MODE_PRIVATE);
+		Editor edit = preference.edit();
+    	if (isChecked)
+    	{
+    		edit.putString("gmail", gmail_et.getText().toString());
+    		edit.putString("password", password_et.getText().toString());
+    		edit.putString("classNum", classNum_et.getText().toString());
+    		edit.putString("rememberMe", "true");
+    	}
+    	else
+    	{
+    		edit.remove("password");
+    		edit.remove("rememberMe");
+    	}
+    	
+    	edit.commit();
     }
     
     public boolean checkTableExist(String classNum)

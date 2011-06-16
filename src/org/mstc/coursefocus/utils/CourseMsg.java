@@ -1,7 +1,5 @@
 package org.mstc.coursefocus.utils;
 
-import org.mstc.coursefocus.R;
-
 public class CourseMsg 
 {
 	private String courseNum;
