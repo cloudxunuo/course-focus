@@ -17,6 +17,18 @@
         <activity android:name=".CoursesOfADay"
         			android:label="@string/allCourse">
 		</activity>
+		
+		<activity android:name=".HomeComment"
+        			android:label="@string/allCourse">
+		</activity>
+		
+		<activity android:name=".ContactUs"
+        			android:label="@string/allCourse">
+		</activity>
+		
+		<activity android:name=".CommentCourse"
+        			android:label="@string/allCourse">
+		</activity>
         		
        	<activity android:name=".EditCourse"
        		android:label="@string/editCourse">

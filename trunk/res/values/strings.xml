@@ -2,9 +2,14 @@
 <resources>
 	<string name="app_name">CourseFocus</string>
 	
+	<!-- strings used in menu -->
+	<string name="viewComment">查看课程评论</string>
+	<string name="logout">注销</string>
+	<string name="contactUs">联系我们</string>
+	
 	<!-- strings used in login activity -->
     <string name="email">Email(gmail)</string>
-    <string name="code">gamil密码</string>
+    <string name="password">gamil密码</string>
     <string name="rememberInfo">记住我的信息</string>
     <string name="classNum">班号</string>
     <string name="login">登录</string>
@@ -65,6 +70,9 @@
 	<!-- strings used in all course-->
 	<string name="allCourse">今天的课程</string>
 	
+	<!-- string used in courses of a day -->
+	<string name="submitComment">发布消息</string>
+	
 	<!-- strings used in course details -->
 	<string name="courseDetails">课程详细信息</string>
 	<string name="to">到</string>
@@ -80,4 +88,13 @@
 	<string name="editThis">编辑本节课</string>
 	<string name="deleteThis">删除本节课</string>
 	<string name="confirmMsg">你确定要删除本课？</string>
+	
+	<!-- strings used in contact us -->
+	<string name="teamInfo">\u0020\u0020\u0020\u0020应用如果出现的BUG,请将情况发至下面某人邮箱,不胜感激\n\n
+	许强\u0020\u0020\u0020\u0020\u0020邮箱：cloudxunuo@gmail.com\n
+	朱德锐\u0020邮箱：\n
+	陈欣\u0020\u0020\u0020\u0020\u0020邮箱：\n
+	张晓敏\u0020邮箱：
+	</string>
+	<string name="ourTeam">开发团队: <i>Imaholic</i>\u0020 (哈工大软院09级)</string>
 </resources>

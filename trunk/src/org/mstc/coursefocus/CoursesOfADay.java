@@ -13,6 +13,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Canvas;
@@ -22,11 +24,14 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -63,6 +68,35 @@ public class CoursesOfADay extends Activity implements OnTouchListener,
 		init();
 		flayout.addView(weekLayout[today]);
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		super.onCreateOptionsMenu(menu);
+		menu.add(0, 0, 0, getString(R.string.viewComment));
+		menu.add(0, 1, 1, getString(R.string.logout));
+		menu.add(0, 2, 2, getString(R.string.contactUs));
+		return true;
+	}
+
+	
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		switch (item.getItemId()) { 
+		   case 0:
+			   viewComment();
+		       return true; 
+		   case 1:
+			   logout();
+		       return true; 
+		   case 2: 
+			   contactUs();
+		       return true; 
+		   } 
+		   return false; 
+	}
 
 	public boolean init()
 	{		
@@ -94,6 +128,34 @@ public class CoursesOfADay extends Activity implements OnTouchListener,
     		e.printStackTrace();
     		return false;
     	}
+	}
+	
+	
+	private void viewComment()
+	{
+		Intent intent = new Intent();
+		intent.setClass(CoursesOfADay.this, HomeComment.class);
+		startActivity(intent);
+	}
+	
+	private void logout()
+	{
+		Intent intent = new Intent();
+		intent.setClass(CoursesOfADay.this, Login.class);
+		SharedPreferences preference = getSharedPreferences("person",Context.MODE_PRIVATE);
+		Editor edit = preference.edit();
+		edit.remove("rememberMe");
+		edit.commit();
+		
+		startActivity(intent);
+		CoursesOfADay.this.finish();
+	}
+	
+	private void contactUs()
+	{
+		Intent intent = new Intent();
+		intent.setClass(CoursesOfADay.this, ContactUs.class);
+		startActivity(intent);
 	}
 	
 	private void setTodayIndex()
@@ -378,6 +440,11 @@ public class CoursesOfADay extends Activity implements OnTouchListener,
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int whichButton) {
 							clearBackColor();
+							Intent intent = new Intent();
+							intent.setClass(CoursesOfADay.this, CommentCourse.class);
+							intent.putExtra("classNum", classNum);
+							intent.putExtra("courseNum", course.getCourseNum());
+							startActivity(intent);
 						}
 						});
 			builder.setNeutralButton(R.string.more,

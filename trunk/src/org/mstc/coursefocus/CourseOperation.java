@@ -12,8 +12,8 @@ import android.app.Dialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -40,9 +40,6 @@ public class CourseOperation extends ListActivity{
                 new String[]{"title","img"},
                 new int[]{R.id.title,R.id.img});
         setListAdapter(adapter);
-//        ListView lv = getListView();
-//        System.out.println(lv);
-//        lv.getChildAt(4).setDrawingCacheBackgroundColor(Color.GRAY);
     }
 
 	private List<Map<String, Object>> getData() {
@@ -63,16 +60,24 @@ public class CourseOperation extends ListActivity{
         map.put("img", R.drawable.icon);
         list.add(map);
         
-        map = new HashMap<String, Object>();
-        map.put("title", getString(R.string.editThis));
-        map.put("img", R.drawable.icon);
-        list.add(map);
-        
-        map = new HashMap<String, Object>();
-        map.put("title", getString(R.string.deleteThis));
-        map.put("img", R.drawable.icon);
-        list.add(map);
-        
+        DBHelper dbHelper = new DBHelper(CourseOperation.this, "coursefocus");
+		SQLiteDatabase db = dbHelper.getReadableDatabase();
+		Cursor cursor = db.query("c" + classNum, new String[]{"editable"}, "courseNum=?", new String[]{courseNum + ""}, null, null, null);
+		cursor.moveToNext();
+		String editable = cursor.getString(cursor.getColumnIndex("editable"));
+		db.close();
+		if (editable.equals("1"))
+		{
+			map = new HashMap<String, Object>();
+	        map.put("title", getString(R.string.editThis));
+	        map.put("img", R.drawable.icon);
+	        list.add(map);
+	        
+			map = new HashMap<String, Object>();
+	        map.put("title", getString(R.string.deleteThis));
+	        map.put("img", R.drawable.icon);
+	        list.add(map);
+		}
         return list;
     }
 
