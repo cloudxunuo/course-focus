@@ -7,9 +7,11 @@ import java.util.Map;
 
 import org.mstc.coursefocus.db.DBHelper;
 
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
+import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -102,13 +104,45 @@ public class CourseOperation extends ListActivity{
 		}
 		if (position == 3)
 		{
-			
+			DBHelper dbHelper = new DBHelper(CourseOperation.this, "coursefocus");
+			String select = "select * from c" + classNum+ " where courseNum = '"+courseNum+"'";
+			SQLiteDatabase db = dbHelper.getWritableDatabase();
+			try
+			{
+				Cursor cursor = db.rawQuery(select, null);
+				cursor.moveToNext();
+				String courseName = cursor.getString(cursor.getColumnIndex("courseName"));
+				String teacherName = cursor.getString(cursor.getColumnIndex("teacherName"));
+				String location = cursor.getString(cursor.getColumnIndex("location"));
+				String editable = cursor.getString(cursor.getColumnIndex("editable"));
+				String reminding =cursor.getString(cursor.getColumnIndex("reminding"));
+				db.close();
+				if(!editable.equals("0"))
+				{
+					Intent intent = new Intent();
+					intent.setClass(CourseOperation.this, EditCourse.class);
+					intent.putExtra("courseName", courseName);
+					intent.putExtra("classNum", classNum);
+					intent.putExtra("courseNum", courseNum);
+					intent.putExtra("teacherName",teacherName);
+					intent.putExtra("location",location);
+					intent.putExtra("reminding",reminding);
+					startActivity(intent);	
+				}
+				else
+				{
+					AlertDialog.Builder builder = new Builder(CourseOperation.this);
+					builder.setMessage("此课程不可编辑");
+					builder.setTitle("提示");
+					builder.create().show();
+				}
+			}
+			catch(Exception e){}
 		}
 		if (position == 4)
 		{
 			showDialog(DIALOG_PAUSED_ID);
 		}
-		
 		super.onListItemClick(l, v, position, id);
 	}
 
@@ -123,6 +157,11 @@ public class CourseOperation extends ListActivity{
 			CourseOperation.this.finish();
 		}
 		return super.onKeyDown(keyCode, event);
+	}
+	
+	private void searchCourse()
+	{
+		
 	}
 	
 	private void deleteCourse()
