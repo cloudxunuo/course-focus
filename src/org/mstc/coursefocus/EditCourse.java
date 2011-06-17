@@ -23,9 +23,12 @@ import android.widget.Toast;
 
 public class EditCourse extends Activity {
 	/** Called when the activity is first created. */
-	private String classNum = null;
+	private String courseName=null,classNum = null,ocourseNum =null,teacherName=null,location=null,reminding=null;
+	private int fromweek;
+	private int endweek;
 	private int weekday;
 	private int classtime;
+	private int flag = 0;//0表示添加，1表示修改
 	private Button OK, Cancel;
 	private EditText CourseName, TeacherName, CourseAddress;
 	private Spinner CourseTime, CourseWeeks1, CourseWeeks2, CourseDate;
@@ -39,10 +42,22 @@ public class EditCourse extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.editcourse);
 		Intent intent = this.getIntent();
+		courseName = intent.getStringExtra("courseName");
 		classNum = intent.getStringExtra("classNum");
 		weekday = intent.getIntExtra("weekday",2);
 		classtime = intent.getIntExtra("time", 1);
-		
+		ocourseNum = intent.getStringExtra("courseNum");
+		teacherName = intent.getStringExtra("teacherName");
+		location = intent.getStringExtra("location");
+		reminding = intent.getStringExtra("reminding");
+		if(ocourseNum!=null)
+		{
+			flag=1;
+			fromweek = Integer.parseInt(ocourseNum.substring(0, 2));
+			endweek = Integer.parseInt(ocourseNum.substring(2, 4));
+			weekday = Integer.parseInt(ocourseNum.substring(4,5));
+			classtime = Integer.parseInt(ocourseNum.substring(5,6));
+		}
 		initWidget();
 		Date = new String[] { getString(R.string.Mon), getString(R.string.Tue),
 				getString(R.string.Wed), getString(R.string.Thur),
@@ -77,9 +92,22 @@ public class EditCourse extends Activity {
 		CourseTime.setSelection(classtime - 1);
 		CourseWeeks1.setAdapter(arrayAdapter1);
 		CourseWeeks2.setAdapter(arrayAdapter1);
-		CourseWeeks2.setSelection(20);
+		//cx
+		if(flag==1)
+		{
+			CourseWeeks1.setSelection(fromweek-1);
+			CourseWeeks2.setSelection(endweek-1);
+			CourseName.setText(courseName);
+			TeacherName.setText(teacherName);
+			CourseAddress.setText(location);
+		}
+		else
+		{
+			CourseWeeks2.setSelection(20);
+		}
+		
 		CourseDate.setAdapter(arrayAdapter2);
-		CourseDate.setSelection(weekday);
+		CourseDate.setSelection(weekday-1);
 	}
 
 	private void initWidget() {
@@ -98,7 +126,6 @@ public class EditCourse extends Activity {
 			public void onClick(View v) {
 				boolean infoComplete = true;
 				String tip = "";
-				// TODO Auto-generated method stub
 				if (CourseName.getText().toString().equals(""))
 				{
 					infoComplete = false;
@@ -129,7 +156,6 @@ public class EditCourse extends Activity {
 		
 		Cancel.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				Intent intent = new Intent();
 				intent.setClass(EditCourse.this, CoursesOfADay.class);
 				intent.putExtra("classNum", classNum);
@@ -141,7 +167,6 @@ public class EditCourse extends Activity {
 	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		// TODO Auto-generated method stub
 		if (keyCode == KeyEvent.KEYCODE_BACK)
 		{
 			Intent intent = new Intent();
@@ -218,6 +243,13 @@ public class EditCourse extends Activity {
 						values.put("reminding", "1");
 						try
 						{
+							if(flag==1)
+							{
+								String sql1="delete from c"+classNum+" where courseNum="+ocourseNum+"";
+								System.out.println(sql1);
+								db.execSQL(sql1);
+								//db.rawQuery(sql1, null);
+							}
 							db.insert("c" + classNum, null, values);
 						}
 						catch(Exception e)
@@ -225,7 +257,6 @@ public class EditCourse extends Activity {
 							e.printStackTrace();
 						}
 						db.close();
-						
 						Intent intent = new Intent();
 						intent.setClass(EditCourse.this, CoursesOfADay.class);
 						intent.putExtra("classNum", classNum);
